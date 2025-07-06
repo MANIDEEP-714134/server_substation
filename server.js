@@ -6,6 +6,10 @@ const SensorData = require('./dataModel');
 
 app.use(express.json()); // Middleware to parse JSON
 
+const cors = require('cors');
+app.use(cors()); // Allow all origins
+
+
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
